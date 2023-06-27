@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>»Validaciones</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrapo5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,22 +29,23 @@
                 $telefono ="";
                 $genero = null;
                 $ciudad = null;
-                $habilidades = [1];
-                ?>
+                $habilidades = [];
 
+                ?>
+                
                 <?php if ( isset($_POST['ficha']) )  {?>
                 <div class="col-md-8 mb-4">
 
                             <?php
-                            $ficha = isset($_POST[ 'ficha']) ? $_POST[ 'ficha'] : "";
-                            $nombre = isset($_POST[ 'nombre']) ? $_POST[ 'nombre'] : "";
-                            $apellido = isset($_POST[ 'apellido']) ? $_POST[ 'apellido'] :
-                            $correo = isset($_POST[ 'correo']) ? $_POST['correo'] : "";
-                            $telefono = isset($_POST[ 'telefono']) ? $_POST['telefono'] : "";
-                            $genero = isset($_POST[ 'genero']) ? $_POST['genero'] : null ;
+                            $ficha = isset($_POST['ficha']) ? $_POST[ 'ficha'] : "";
+                            $nombre = isset($_POST['nombre']) ? $_POST[ 'nombre'] : "";
+                            $apellido = isset($_POST['apellido']) ? $_POST[ 'apellido'] : "";
+                            $correo = isset($_POST['correo']) ? $_POST['correo'] : "";
+                            $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : "";
+                            $genero = isset($_POST['genero']) ? $_POST['genero'] : null ;
                             $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
                             $habilidades = isset($_POST['habilidades']) ? $_POST[ 'habilidades'] : [];
-
+                            
                             $campos = array();
 
                             //Validamos que Los campos tengan información
@@ -55,10 +56,10 @@
                             if ($nombre == ""){
                             array_push($campos, "El campo nombre no puede estar vacío");
                         }
-                            if ( $apellido == ""){
+                            if ($apellido == ""){
                             array_push($campos, "El campo apellido no puede estar vacío");
                         }
-                            if ( $correo == ""){
+                            if ($correo == ""){
                             array_push($campos, "El campo correo no puede estar vacío");
                         }
                             if ( $genero == "") {
@@ -132,7 +133,7 @@
 
                                 <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="genero" id="genero3" value="otro" <?php if($genero == "otro") echo "checked" ?>>
-                                <label class="form-check-label" for="genero3">0tro</label>
+                                <label class="form-check-label" for="genero3">Otro</label>
 
                                 </div>
 
@@ -143,10 +144,10 @@
                                 <select class="form-select" name="ciudad" id="ciudad">
                                 <option value="" selected>Seleccione ciudad</option>
 
-                                <option value="bucaramanga" <?php if($ciudad == "bucaramanga") echo “selected” ?>>Bucaramanga</option>
+                                <option value="bucaramanga" <?php if($ciudad == "bucaramanga") echo "selected" ?>>Bucaramanga</option>
                                 <option value="medellin" <?php if($ciudad == "medellin") echo "selected" ?>>Medellin</option>
                                 <option value="cali" <?php if($ciudad == "cali") echo "selected" ?>>Cali</option>
-                                <option value="bogota" <?php if($ciudad == "bogota") echo “selected” ?>>Bogota</option>
+                                <option value="bogota" <?php if($ciudad == "bogota") echo "selected" ?>>Bogota</option>
                                 </select>
 
                                 </div>
@@ -154,7 +155,7 @@
                                 <div class="mb-3">
                                 <p>Seleccione minimo 3 habilidades</p>
                                 <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="htm1" id="htm1" <?php if(in_array('html', $habilidades)) echo “checked” ?>>
+                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="htm1" id="htm1" <?php if(in_array('html', $habilidades)) echo "checked" ?>>
                                 <label class="form-check-label" for="html1">
                                 HTML
                                 </label>
@@ -162,7 +163,7 @@
                                 <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="habilidades[]" value="css" id="css" <?php if(in_array('css', $habilidades)) echo "checked" ?>>
                                 <label class="form-check-label" for="css">
-                                css
+                                CSS
                                 </label>
                                 </div>
                                 <div class="form-check">
@@ -178,20 +179,20 @@
                                 </label>
                                 </div>
                                 <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="java" id="java" <?php if(in_array('java', $habilidades)) echo “checked” ?>>
+                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="java" id="java" <?php if(in_array('java', $habilidades)) echo "checked" ?>>
                                 <label class="form-check-label" for="java">
                                 JAVA
                                 </label>
                                 </div>
                                 <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="sgl" id="sqgl" <?php if(in_array('sgl', $habilidades)) echo "checked" ?>>
-                                <label class="form-check-label" for="sqgl">
+                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="sgl" id="sqgl" <?php if(in_array('sql', $habilidades)) echo "checked" ?>>
+                                <label class="form-check-label" for="sql">
                                 SQL
                                 </label>
                                 </div>
                                 <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="uml" id="um1" <?php if(in_array('uml', $habilidades)) echo "checked" ?>>
-                                <label class="form-check-label" for="uml1">
+                                <input class="form-check-input" type="checkbox" name="habilidades[]" value="uml" id="uml" <?php if(in_array('uml', $habilidades)) echo "checked" ?>>
+                                <label class="form-check-label" for="uml">
                                 UML
                                 </label>
                                 </div>

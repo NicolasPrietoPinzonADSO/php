@@ -15,7 +15,7 @@ const validarCorreo = correo => {
    // Validamos que eL campo tenga soLo un y un punto
    // eL @ no puede ser eL primer caracter deL correo
    // y eL punto debe it posicionando aL menos un cardcter despuds de La @ 
-   return /ʌ[ʌ\s@]+@[ʌ\s@]+\•[ʌ\s@]+$/.test(correo)
+   return /^[^\s@]+@[^\s@]+\.[^^\s@]+$/.test(correo)
 }
 
 const soloLetras = (e) => {
@@ -87,8 +87,8 @@ const validacion = (e) => {
    }
 
    if (!validarCorreo(correo.value)) {
-       alert("Por favor, escribe un correo electronic° valido"); 
-       correo. focus();
+       alert("Por favor, escribe un correo electronico valido"); 
+       correo.focus();
        return false;
    }
 
@@ -103,7 +103,7 @@ const validacion = (e) => {
        return false
    }
 
-   if (ciudad.selectedlndex == null || ciudad.selectedlndex == 0) { 
+   if (ciudad.selectedIndex == null || ciudad.selectedIndex == 0) { 
        alert('Por favor, seleccione una ciudad')
        return false
    }
